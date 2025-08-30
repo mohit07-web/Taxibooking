@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+
+ <style>
+        /* Reset default margin & padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Login container */
+        .login-container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Title */
+        .login-container .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Input fields */
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .login-form input:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+        }
+
+        /* Login button */
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-form button:hover {
+            background: #1a5ed7;
+        }
+
+        /* Error & Success messages */
+        .error {
+            background: #ffe0e0;
+            color: #e74c3c;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .success {
+            background: #e0ffe5;
+            color: #27ae60;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+	<div class="login-container">
+
+        <h2 class="title">Admin Login</h2>
+
+	<div th:if="${param.error}" class ="error">
+		<h2>INVALID CRENDENTIALS</h2>
+	</div>
+	
+	<div th:if="${logout}" class ="success">
+		<h2>YOU HAVE BEEN SUCCESSFULLY LOGOUT</h2>
+	</div>
+
+	<form action="/login" method="post" class ="login-form">
+		<input name="username" type="text" placeholder="enter username"> <br>
+		<input name="password" type="password" placeholder="enter password"><br>
+		<button>login</button>
+	</form>
+
+</body>
+</html>

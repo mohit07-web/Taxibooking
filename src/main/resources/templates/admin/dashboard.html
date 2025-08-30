@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            background: #fff;
+            margin-top: 50px;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+            width: 500px;
+            text-align: center;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container h2 {
+            color: #27ae60;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            background: #2575fc;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #1a5ed7;
+        }
+
+        .logout {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .logout:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+	
+    <div class="container">
+        <h2 th:text="${message}"></h2>
+        
+        <h1>Welcome to Admin Panel</h1>
+	<div class="menu">
+	<a href="readAllContacts">Read all contacts</a><br>
+	<a href="readAllBooking">Read all booking</a><br>
+	<a href="addService">Add service</a><br>
+	<a href="readAllService">Read all service</a><br>
+	<a href="changeCredentials">Change credentials</a><br>
+	
+	<a href="/dologout" class="logout">Logout</a>
+	
+	</div>
+
+</body>
+</html>
