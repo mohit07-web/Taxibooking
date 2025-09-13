@@ -23,7 +23,6 @@ public class CustomLogoutHandler implements LogoutHandler {
 			
 			response.sendRedirect("admin/dashboard");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
